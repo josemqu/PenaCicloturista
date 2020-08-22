@@ -1,0 +1,40 @@
+.fotos-main-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.fotos-main-section .album-container {
+    display: flex;
+    width: 30vw;
+    margin-left: 2rem;
+    height: auto;
+    max-width: 350px;
+}
+
+.album-container img {
+    width: 100px;
+    height: 100px;
+}
+
+.selector-section {
+    display: flex;
+}
+
+.portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem;
+    padding: .75rem;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
+.portada img {
+    width: 100%;
+    height: 100%;
+}

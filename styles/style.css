@@ -1,4 +1,4 @@
-@import url ('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
 *,
 *::before,
@@ -28,6 +28,7 @@ body {
   align-items: center;
   text-decoration: none;
 }
+
 .main-nav a {
   text-decoration: none;
   padding: 1rem;
@@ -37,15 +38,31 @@ body {
   color: brown;
 }
 
-.main-header {
+.main-header,
+.main-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.main-header {
   height: 140px;
+}
+
+.main-footer {
+  height: 70px;
+  color: rgba(128, 128, 128, 0.8);
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.main-footer .container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+  flex-grow: 1;
 }
