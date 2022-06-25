@@ -49,12 +49,18 @@ const albums = document.querySelectorAll( '.album' );
 
 covers.forEach( ( cover, i ) => {
 	cover.addEventListener( 'click', e => {
+		covers.forEach( cover => cover.classList.add( 'inactive' ) );
 		albums.forEach( album => {
-			album.classList.remove( 'active' )
 			album.style.display = 'none';
+			album.classList.remove( 'active' );
 		} )
-		albums[ i ].classList.add( 'active' )
+		covers[ i ].classList.remove( 'inactive' );
 		albums[ i ].style.display = 'block';
+		albums[ i ].classList.add( 'active' );
+		window.scrollTo( {
+			top: 0,
+			behavior: 'smooth',
+		} );
 		assignImageBehaviour();
 	} )
 } );

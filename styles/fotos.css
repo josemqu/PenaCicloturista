@@ -39,6 +39,12 @@
     background-position: center center;
     margin-right: 0px;
     cursor: pointer;
+    /* opacity: .4; */
+
+}
+
+.cover.inactive {
+    opacity: .4;
 }
 
 /* .cover img {
@@ -64,6 +70,11 @@
     padding: 0px 20px 20px 20px;
 } */
 
+/* .album {
+    position: relative;
+    animation-fill-mode: forwards;
+} */
+
 .album-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -74,9 +85,9 @@
     /* height: 50vh; */
 }
 
-.album.active {
+/* .album.active {
     display: block;
-}
+} */
 
 .album-grid img {
     width: 120px;
