@@ -1,8 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    font-size: 1.2rem;
+    min-height: 100vh;
+}
+
+/* 
+.photo-main-section {
+    display: flex;
+} */
+
+
+
 .photo-main-section {
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    justify-content: center;
-    align-content: center;
+    grid-template-columns: 1fr 3fr;
+    min-height: 70vh;
+    padding-top: 10px;
+    /* justify-content: center;
+    align-content: center; */
 }
 
 /* .cover-container {
@@ -10,7 +31,7 @@
     flex-wrap: wrap;
 } */
 
-.cover-container h1 {
+.cover h1 {
     padding: 0px 20px 0px 20px;
     /* align-self: center;
     justify-self: center; */
@@ -19,10 +40,10 @@
 
 .cover-grid {
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    grid-template-columns: 1fr;
-    padding: 0px 20px 20px 0px;
-    align-self: center;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    /* grid-template-columns: 1fr; */
+    padding: 0px 0px 20px 0px;
+    /* align-self: center; */
     grid-gap: 20px;
 
 }
@@ -36,15 +57,16 @@
     /* position: relative; */
     overflow: hidden;
     background-size: cover;
-    background-position: center center;
+    background-position: center top;
     margin-right: 0px;
     cursor: pointer;
     /* opacity: .4; */
+    box-shadow: 5px 5px 15px rgb(39, 39, 39, 0.5);
 
 }
 
 .cover.inactive {
-    opacity: .4;
+    opacity: .2;
 }
 
 /* .cover img {
@@ -60,10 +82,6 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.textos h4 {
-    margin-top: 0px;
-}
-
 /* .album-container {
     display: flex;
     width: 60%;
@@ -77,11 +95,12 @@
 
 .album-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0px 20px 0px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    /* width: 100%; */
+    padding: 0px 0px 0px 20px;
     grid-gap: 20px;
-    justify-content: space-around;
-    align-content: space-around;
+    /* justify-content: space-around; */
+    /* align-content: center; */
     /* height: 50vh; */
 }
 
@@ -92,12 +111,13 @@
 .album-grid img {
     width: 120px;
     height: 70px;
-    min-width: 100px;
+    /* min-width: 100px; */
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
-    background-size: cover;
+    object-fit: cover;
     background-position: center center;
+    box-shadow: 5px 5px 15px rgb(39, 39, 39, 0.5);
 }
 
 #lightbox {
