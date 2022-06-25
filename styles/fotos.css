@@ -34,7 +34,6 @@
     height: 160px;
     border-radius: 10px;
     font-weight: bold;
-    padding: 10px;
     /* position: relative; */
     overflow: hidden;
     background-size: cover;
@@ -61,6 +60,11 @@
     color: rgba(0, 0, 0, 0.8);
     text-shadow: 3px 3px 15px rgb(39, 39, 39);
     font-family: 'Roboto', sans-serif;
+}
+
+.textos h4 {
+    padding: 20px;
+    margin: 0;
 }
 
 /* .album-container {
