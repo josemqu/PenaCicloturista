@@ -5,13 +5,10 @@
     align-content: center;
 }
 
-.cover-container {
-    /* width: 40%;
-    flex-wrap: wrap; */
-
-
-
-}
+/* .cover-container {
+    width: 40%;
+    flex-wrap: wrap;
+} */
 
 .cover-container h1 {
     padding: 0px 20px 0px 20px;
@@ -61,13 +58,11 @@
     margin-top: 0px;
 }
 
-.album-container {
-    /* display: flex;
-    width: 60%; */
+/* .album-container {
+    display: flex;
+    width: 60%;
     padding: 0px 20px 20px 20px;
-
-
-}
+} */
 
 .album-grid {
     display: grid;
@@ -112,4 +107,6 @@
     padding: 0px;
     background-color: black;
     border: 8px solid white;
+    border-bottom: 40px solid white;
+    border-radius: 2px;
 }

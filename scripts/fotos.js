@@ -17,7 +17,6 @@ function assignImageBehaviour() {
 			const img = document.createElement( 'img' )
 			img.src = image.src
 			currentImage = img.src
-			console.log( currentImage );
 			currentImgIndex = imagesArr.findIndex( el => el.src == currentImage )
 			while ( lightbox.firstChild ) {
 				lightbox.removeChild( lightbox.firstChild )
@@ -33,7 +32,6 @@ function assignImageBehaviour() {
 		document.removeEventListener( 'keydown', keyPassImage );
 	} )
 
-
 	function keyPassImage( e ) {
 		if ( e.keyCode == 39 ) {
 			currentImgIndex += imagesArr.length + 1
@@ -41,7 +39,7 @@ function assignImageBehaviour() {
 		if ( e.keyCode == 37 ) {
 			currentImgIndex += imagesArr.length - 1
 		}
-		console.log( currentImgIndex %= imagesArr.length );
+		currentImgIndex %= imagesArr.length;
 		document.querySelector( "#lightbox > img" ).src = imagesArr[ currentImgIndex ].src;
 	}
 }
@@ -55,7 +53,6 @@ covers.forEach( ( cover, i ) => {
 			album.classList.remove( 'active' )
 			album.style.display = 'none';
 		} )
-		console.log( albums[ i ] );
 		albums[ i ].classList.add( 'active' )
 		albums[ i ].style.display = 'block';
 		assignImageBehaviour();
