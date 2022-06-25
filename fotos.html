@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/fotos.css">
+    <script src="./scripts/fotos.js" defer></script>
+
     <title>Fotos</title>
 </head>
 
@@ -26,36 +28,94 @@
                 </ul>
             </nav>
         </header>
-        <section class="fotos-main-section">
-            <div class="main-container">
-                <div class="call-to-action">
-                    <h1 class="title">Colección de fotos</h1>
-                    <div class="selector-section">
-                        <div class="portada">
-                            <img src="./images/balcarce/pena.jpg" alt="balcarce">
-                            Balcarce
+        <section class="photo-main-section">
+            <div class="cover-container">
+                <!-- <h3 class="title">Colección de fotos</h3> -->
+                <div class="cover-grid">
+                    <div class="cover" style="background-image: url('./images/balcarce/barro.jpg');">
+                        <div class="textos">
+                            <h4>
+                                Balcarce
+                            </h4>
                         </div>
-                        <div class="portada">
-                            <img src="./images/condor/24_-_velecleta2.jpg" alt="balcarce">
-                            El Cóndor
+                    </div>
+                    <div class="cover" style="background-image: url('./images/condor/24_-_velecleta2.jpg');">
+                        <div class="textos">
+                            <h4>
+                                El Cóndor
+                            </h4>
                         </div>
-                        <div class="portada">
-                            <img src="./images/batan/03.jpg" alt="balcarce">
-                            Batán
+                    </div>
+                    <div class="cover" style="background-image: url('./images/batan/03.jpg');">
+                        <div class="textos">
+                            <h4>
+                                Batán
+                            </h4>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="album-container">
-                <img src="./images/balcarce/al_bosque.jpg" alt="bosque">
-                <img src="./images/balcarce/al_bosque.jpg" alt="bosque">
-                <img src="./images/balcarce/al_bosque.jpg" alt="bosque">
-                <img src="./images/balcarce/al_bosque.jpg" alt="bosque">
-                <img src="./images/balcarce/al_bosque.jpg" alt="bosque">
+                <div class="album" style="display:none">
+                    <div class="album-grid">
+                        <img src="./images/balcarce/al_bosque.jpg" alt="al_bosque">
+                        <img src="./images/balcarce/barro.jpg" alt="barro">
+                        <img src="./images/balcarce/bosque.jpg" alt="bosque">
+                        <img src="./images/balcarce/camino.jpg" alt="camino">
+                        <img src="./images/balcarce/campamento.jpg" alt="campamento">
+                        <img src="./images/balcarce/cartel.jpg" alt="cartel">
+                        <img src="./images/balcarce/garcando_a_lo_lejos.jpg" alt="garcando_a_lo_lejos">
+                        <img src="./images/balcarce/mirador.jpg" alt="mirador">
+                        <img src="./images/balcarce/paisaje.jpg" alt="paisaje">
+                        <img src="./images/balcarce/pena.jpg" alt="pena">
+                        <img src="./images/balcarce/puesta.jpg" alt="puesta">
+                        <img src="./images/balcarce/rueda.jpg" alt="rueda">
+                    </div>
+                </div>
+                <div class="album" style="display:none">
+                    <div class="album-grid">
+                        <img src="./images/condor/01_-_descanso.jpg">
+                        <img src="./images/condor/02_-_espejo.jpg">
+                        <img src="./images/condor/04_-_tierra.jpg">
+                        <img src="./images/condor/07_-_via.jpg">
+                        <img src="./images/condor/08_-_via2.jpg">
+                        <img src="./images/condor/09_-_tarde.jpg">
+                        <img src="./images/condor/12_-_tarde2.jpg">
+                        <img src="./images/condor/10_-_puente.jpg">
+                        <img src="./images/condor/13_-_dedo.jpg">
+                        <img src="./images/condor/14_-_guarda.jpg">
+                        <img src="./images/condor/15_-_muelle.jpg">
+                        <img src="./images/condor/16_-_jaja.jpg">
+                        <img src="./images/condor/18_-_ola.jpg">
+                        <img src="./images/condor/19_-_serio.jpg">
+                        <img src="./images/condor/20_-_imponente.jpg">
+                        <img src="./images/condor/22_-_gobierno.jpg">
+                        <img src="./images/condor/24_-_velecleta2.jpg">
+                        <img src="./images/condor/25_-_amistades.jpg">
+                        <img src="./images/condor/26_-_estacionados.jpg">
+                        <img src="./images/condor/27_-_amistades2.jpg">
+                        <img src="./images/condor/28_-_delito.jpg">
+                        <img src="./images/condor/05_-_petroleo.jpg">
+                        <img src="./images/condor/11_-_atencion.jpg">
+                        <img src="./images/condor/21_-_popular.jpg">
+                    </div>
+                </div>
+                <div class="album" style="display:none">
+                    <div class="album-grid">
+                        <img src="./images/batan/03.jpg">
+                        <img src="./images/batan/04.jpg">
+                        <img src="./images/batan/05.jpg">
+                        <img src="./images/batan/06.jpg">
+                        <img src="./images/batan/07.jpg">
+                        <img src="./images/batan/bicisenda.jpg">
+                        <img src="./images/batan/nieve1.jpg">
+                        <img src="./images/batan/nieve2.jpg">
+                    </div>
+                </div>
             </div>
         </section>
     </div>
-    <footer class="main-footer">
+    <footer class=" main-footer">
         <div class="container">
             (C) Peña Clicloturista Ernesto Frith 2020
         </div>

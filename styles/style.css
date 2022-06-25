@@ -59,24 +59,24 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    /* background: rgb(214, 192, 255); */
+    background: rgb(214, 192, 255);
 }
 
-.main-container>* {
+/* .main-container>* {
     position: relative;
-    margin: 30%;
+    margin: 10%;
 }
 
 .main-container .flexLabel {
     flex-shrink: 0;
-}
+} */
 
 .main-footer {
     height: 70px;
     color: rgb(0, 0, 0);
     background-color: rgb(201, 201, 201);
-    position: sticky;
-    bottom: 0%;
+    /* position: sticky; */
+    /* bottom: 0%; */
 }
 
 .main-footer .container {
