@@ -16,12 +16,14 @@ body {
 
 .navbar {
     display: flex;
+    /* height: 100%; */
     justify-content: space-between;
-    align-items: center;
+    /* align-content: center; */
+    /* align-items: center; */
     background-color: white;
     position: sticky;
     top: 0%;
-    padding: 0.5rem;
+    padding: 10px 10px;
 }
 
 .brand-logo {
@@ -38,23 +40,27 @@ body {
     list-style: none;
     align-items: center;
     text-decoration: none;
+    width: 100%;
 }
 
 .navbar-links li a {
     text-decoration: none;
     padding: 1rem;
     display: block;
+    border-radius: 3px;
 }
 
 .navbar-links a:hover {
-    color: brown;
+    color: rgb(100, 100, 100);
+    background-color: rgb(200, 200, 200);
+    width: 100%;
 }
 
 .toggle-button {
     position: absolute;
+    display: none;
     top: .75rem;
     right: 1rem;
-    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -62,9 +68,9 @@ body {
 }
 
 .toggle-button .bar {
-    height: 3px;
+    height: 4px;
     width: 100%;
-    background-color: black;
+    background-color: rgb(50, 50, 50);
     border-radius: 10px;
 }
 
@@ -75,20 +81,22 @@ body {
 
     .navbar-links {
         display: none;
+        width: 100%;
     }
 
     .navbar {
         flex-direction: column;
         align-items: flex-start;
+        align-items: center;
 
     }
 
     .navbar-links ul {
-        width: 100%;
         flex-direction: column;
     }
 
     .navbar-links li {
+        width: 100%;
         text-align: center;
     }
 
@@ -108,6 +116,14 @@ body {
     align-items: center;
     background-color: white;
     z-index: 10;
+}
+
+.main-section {
+    display: grid;
+    min-height: 80vh;
+    padding: 10px 10px;
+    /* justify-content: center;
+    align-content: center; */
 }
 
 .main-container {
