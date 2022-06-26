@@ -6,6 +6,13 @@ let currentImgIndex = -1
 lightbox.id = 'lightbox'
 document.body.appendChild( lightbox )
 
+const prevPhoto = document.createElement( 'div' )
+prevPhoto.id = 'prev-photo'
+
+const nextPhoto = document.createElement( 'div' )
+nextPhoto.id = 'next-photo'
+
+
 
 function assignImageBehaviour() {
 	let images = document.querySelectorAll( '.album.active img' )
@@ -22,11 +29,15 @@ function assignImageBehaviour() {
 				lightbox.removeChild( lightbox.firstChild )
 			}
 			lightbox.appendChild( img );
+			// lightbox.appendChild( prevPhoto )
+			// lightbox.appendChild( nextPhoto )
 			document.addEventListener( 'keydown', keyPassImage );
 		} )
 	} )
 
 	lightbox.addEventListener( 'click', e => {
+		console.log( e.target );
+		console.log( e.currentTarget );
 		if ( e.target !== e.currentTarget ) return
 		lightbox.classList.remove( 'active' );
 		document.removeEventListener( 'keydown', keyPassImage );

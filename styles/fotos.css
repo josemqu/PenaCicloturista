@@ -4,15 +4,16 @@
     min-height: 70vh;
     padding: 1rem 1rem;
     /* justify-content: space-between; */
-    /* justify-content: center; */
+    justify-items: center;
     /* align-content: center; */
     /* align-content: center; */
+    flex-wrap: wrap;
 }
 
-/* .cover-container {
-    width: 40%;
-    flex-wrap: wrap;
-} */
+.cover-container {
+    width: 100%;
+    /* flex-wrap: wrap; */
+}
 
 .cover h1 {
     padding: 0px 20px 0px 20px;
@@ -32,7 +33,8 @@
 }
 
 .cover {
-    min-width: 6rem;
+    width: 100%;
+    /* min-width: 6rem; */
     height: 10rem;
     border-radius: 10px;
     font-weight: bold;
@@ -71,7 +73,7 @@
 
 .album-container {
     /* display: flex; */
-    /* width: 80%; */
+    width: 80%;
     padding: 0px 20px 20px 20px;
 }
 
@@ -82,12 +84,16 @@
 .album-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-    width: 80%;
-    padding: 0px 0px 0px 1rem;
+    /* width: 80%; */
+    /* padding: 0px 0px 0px 1rem; */
     grid-gap: 1rem;
-    /* justify-content: space-around; */
-    /* align-content: center; */
+    justify-items: center;
     /* height: 50vh; */
+}
+
+.album-grid div {
+    padding: 0;
+    margin: 0;
 }
 
 /* .album.active {
@@ -95,6 +101,7 @@
 } */
 
 .album-grid img {
+    display: block;
     width: 6rem;
     height: 4.5rem;
     /* min-width: 100px; */
@@ -117,6 +124,30 @@
     display: none;
 }
 
+#prev-photo {
+    z-index: 1010;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border: 2px dashed black;
+    overflow: hidden;
+    display: flex;
+}
+
+#next-photo {
+    z-index: 1010;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    border: 2px dashed black;
+    overflow: hidden;
+    display: flex;
+}
+
 #lightbox.active {
     display: flex;
     justify-content: center;
@@ -124,6 +155,7 @@
 }
 
 #lightbox img {
+    z-index: 1020;
     max-width: 90%;
     max-height: 80%;
     padding: 0px;
