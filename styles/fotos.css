@@ -3,8 +3,10 @@
     grid-template-columns: 1fr 3fr;
     min-height: 70vh;
     padding: 1rem 1rem;
-    /* justify-content: center;
-    align-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: center; */
+    /* align-content: center; */
+    /* align-content: center; */
 }
 
 /* .cover-container {
@@ -67,21 +69,20 @@
     margin: 0;
 }
 
-/* .album-container {
-    display: flex;
-    width: 60%;
+.album-container {
+    /* display: flex; */
+    /* width: 80%; */
     padding: 0px 20px 20px 20px;
-} */
+}
 
-/* .album {
-    position: relative;
+.album {
     animation-fill-mode: forwards;
-} */
+}
 
 .album-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-    width: 100%;
+    width: 80%;
     padding: 0px 0px 0px 1rem;
     grid-gap: 1rem;
     /* justify-content: space-around; */
