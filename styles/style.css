@@ -24,6 +24,7 @@ body {
     position: sticky;
     top: 0%;
     padding: 10px 10px;
+    box-shadow: 5px 5px 15px rgb(39, 39, 39, 0.2);
 }
 
 .brand-logo {
@@ -31,6 +32,7 @@ body {
     align-items: center;
     font-size: 1.25em;
     text-decoration: none;
+    margin: 10px;
 }
 
 .navbar-links ul {
