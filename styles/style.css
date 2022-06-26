@@ -31,7 +31,7 @@ body {
     flex-direction: column;
 } */
 
-.navbar {
+.navbar .container {
     display: flex;
     /* height: 100%; */
     justify-content: space-between;
@@ -42,6 +42,7 @@ body {
     top: 0%;
     padding: 10px 10px;
     box-shadow: 5px 5px 15px rgb(39, 39, 39, 0.2);
+    padding: 10px;
 }
 
 .brand-logo {
@@ -49,7 +50,11 @@ body {
     align-items: center;
     font-size: 1.25em;
     text-decoration: none;
-    margin: 10px;
+    /* margin: 10px; */
+}
+
+.brand-logo img {
+    display: block;
 }
 
 .navbar-links ul {
@@ -117,10 +122,11 @@ body {
     .navbar-links li {
         width: 100%;
         text-align: center;
+        margin-top: 10px;
     }
 
     .navbar-links li a {
-        padding: 0.5rem 1rem;
+        padding: 0.05rem 0.5rem;
     }
 
     .navbar-links.active {
