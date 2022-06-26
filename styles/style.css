@@ -37,7 +37,7 @@ body {
     box-shadow: 5px 5px 15px rgb(39, 39, 39, 0.2);
     top: 0;
     position: sticky;
-
+    opacity: 0.9;
 }
 
 .navbar .container {
@@ -112,11 +112,6 @@ body {
     .navbar-links {
         display: none;
         width: 100%;
-    }
-
-    .navbar {
-        opacity: 0.9;
-
     }
 
     .navbar .container {
