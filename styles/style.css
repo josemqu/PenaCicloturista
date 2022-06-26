@@ -114,10 +114,14 @@ body {
         width: 100%;
     }
 
+    .navbar {
+        opacity: 0.9;
+
+    }
+
     .navbar .container {
         flex-direction: column;
         align-items: center;
-
     }
 
     .navbar-links ul {
