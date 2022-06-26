@@ -73,8 +73,8 @@
 
 .album-container {
     /* display: flex; */
-    width: 80%;
-    padding: 0px 20px 20px 20px;
+    min-width: 60%;
+    /* padding: 0px 20px 20px 20px; */
 }
 
 .album {
@@ -163,4 +163,10 @@
     border: 8px solid white;
     border-bottom: 40px solid white;
     border-radius: 2px;
+}
+
+@media (max-width: 800px) {
+    .album-container {
+        min-width: 90%;
+    }
 }
