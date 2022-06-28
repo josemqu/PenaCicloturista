@@ -4,8 +4,8 @@
     min-height: 70vh;
     /* padding: .8rem; */
     justify-content: space-between;
-    justify-items: center;
-    /* align-content: center; */
+    /* justify-items: center; */
+    justify-items: end;
     flex-wrap: wrap;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .cover h1 {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 20px;
     /* align-self: center;
     justify-self: center; */
     margin-bottom: 0;

@@ -12,6 +12,16 @@ body {
     min-height: 100vh;
     padding: 0;
     margin: 0;
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
 }
 
 .container {
@@ -74,6 +84,7 @@ body {
 }
 
 .navbar-links li a {
+    color: rgb(75, 75, 75);
     text-decoration: none;
     padding: .8rem;
     display: block;
@@ -81,8 +92,8 @@ body {
 }
 
 .navbar-links a:hover {
-    color: rgb(100, 100, 100);
-    background-color: rgb(200, 200, 200);
+    color: rgb(255, 255, 255);
+    background-color: rgb(190, 190, 190);
     width: 100%;
 }
 
@@ -136,6 +147,10 @@ body {
     .navbar-links.active {
         display: flex;
     }
+
+    .main-footer span {
+        font-size: 0.8rem;
+    }
 }
 
 .navbar,
@@ -175,14 +190,21 @@ body {
 } */
 
 .main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     height: 70px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(201, 201, 201);
+    color: rgb(75, 75, 75);
+    background-color: rgb(190, 190, 190);
     /* position: sticky; */
     /* bottom: 0%; */
 }
 
+.main-footer {
+    font-size: 1rem;
+}
+
 .main-footer .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
