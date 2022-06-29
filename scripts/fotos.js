@@ -1,98 +1,111 @@
-console.log( "fotos.js loaded" );
+console.log("fotos.js loaded");
 
-const lightbox = document.createElement( 'div' )
-let currentImage = ''
-let currentImgIndex = -1
-lightbox.id = 'lightbox'
-document.body.appendChild( lightbox )
+const lightbox = document.createElement("div");
+const imgContainer = document.createElement("div");
+const prevPhoto = document.createElement("div");
+const nextPhoto = document.createElement("div");
 
-const prevPhoto = document.createElement( 'div' )
-prevPhoto.id = 'prev-photo'
-prevPhoto.innerHTML = '<p><</p>'
+imgContainer.classList.add("img-container");
 
-const nextPhoto = document.createElement( 'div' )
-nextPhoto.id = 'next-photo'
-nextPhoto.innerHTML = '<p>></p>'
+let currentImage = "";
+let currentImgIndex = -1;
 
-function assignImageBehaviour() {
-	let images = document.querySelectorAll( '.album.active img' )
-	let imagesArr = [ ...images ]
+lightbox.id = "lightbox";
+document.body.appendChild(lightbox);
+lightbox.appendChild(imgContainer);
+imgContainer.appendChild(prevPhoto);
+imgContainer.appendChild(nextPhoto);
 
-	images.forEach( image => {
-		image.addEventListener( 'click', e => {
-			lightbox.classList.add( 'active' )
-			const imgContainer = document.createElement( 'div' )
-			const img = document.createElement( 'img' )
-			imgContainer.classList.add( 'img-container' )
-			img.src = image.src
-			currentImage = img.src
-			currentImgIndex = imagesArr.findIndex( el => el.src == currentImage )
+lightbox.addEventListener("click", (e) => {
+	if (e.target !== e.currentTarget) return;
+	lightbox.classList.remove("active");
+});
 
-			while ( lightbox.firstChild ) {
-				lightbox.removeChild( lightbox.firstChild )
-			}
+prevPhoto.addEventListener("click", prevPhotoClick);
+nextPhoto.addEventListener("click", nextPhotoClick);
 
-			lightbox.appendChild( imgContainer );
-			imgContainer.appendChild( img );
-			imgContainer.appendChild( prevPhoto )
-			imgContainer.appendChild( nextPhoto )
+document.addEventListener("keydown", keyPassImage);
 
-			prevPhoto.addEventListener( 'click', prevPhotoClick )
-			nextPhoto.addEventListener( 'click', nextPhotoClick )
-
-			document.addEventListener( 'keydown', keyPassImage );
-		} )
-	} )
-
-	lightbox.addEventListener( 'click', e => {
-		// console.log( e.target );
-		// console.log( e.currentTarget );
-		if ( e.target !== e.currentTarget ) return
-		lightbox.classList.remove( 'active' );
-		document.removeEventListener( 'keydown', keyPassImage );
-	} )
-
-	function prevPhotoClick() {
-		currentImgIndex += imagesArr.length - 1
-		currentImgIndex %= imagesArr.length
-		document.querySelector( "#lightbox > div > img" ).src = imagesArr[ currentImgIndex ].src;
+function keyPassImage(e) {
+	let { imagesArr } = getImages();
+	if (e.keyCode == 39) {
+		currentImgIndex += imagesArr.length + 1;
 	}
-
-	function nextPhotoClick() {
-		currentImgIndex += imagesArr.length + 1
-		currentImgIndex %= imagesArr.length
-		document.querySelector( "#lightbox > div > img" ).src = imagesArr[ currentImgIndex ].src;
+	if (e.keyCode == 37) {
+		currentImgIndex += imagesArr.length - 1;
 	}
-
-	function keyPassImage( e ) {
-		if ( e.keyCode == 39 ) {
-			currentImgIndex += imagesArr.length + 1
-		}
-		if ( e.keyCode == 37 ) {
-			currentImgIndex += imagesArr.length - 1
-		}
-		currentImgIndex %= imagesArr.length;
-		document.querySelector( "#lightbox > div > img" ).src = imagesArr[ currentImgIndex ].src;
-	}
+	currentImgIndex %= imagesArr.length;
+	console.log(currentImgIndex);
+	document.querySelector("#lightbox > div > img").src =
+		imagesArr[currentImgIndex].src;
 }
 
-const covers = document.querySelectorAll( '.cover' );
-const albums = document.querySelectorAll( '.album' );
+function prevPhotoClick() {
+	let { imagesArr } = getImages();
+	currentImgIndex += imagesArr.length - 1;
+	currentImgIndex %= imagesArr.length;
+	console.log(currentImgIndex);
+	document.querySelector("#lightbox > div > img").src =
+		imagesArr[currentImgIndex].src;
+}
 
-covers.forEach( ( cover, i ) => {
-	cover.addEventListener( 'click', e => {
-		covers.forEach( cover => cover.classList.add( 'inactive' ) );
-		albums.forEach( album => {
-			album.style.display = 'none';
-			album.classList.remove( 'active' );
-		} )
-		covers[ i ].classList.remove( 'inactive' );
-		albums[ i ].style.display = 'block';
-		albums[ i ].classList.add( 'active' );
-		window.scrollTo( {
+function nextPhotoClick() {
+	let { imagesArr } = getImages();
+	currentImgIndex += imagesArr.length + 1;
+	currentImgIndex %= imagesArr.length;
+	console.log(currentImgIndex);
+	document.querySelector("#lightbox > div > img").src =
+		imagesArr[currentImgIndex].src;
+}
+
+prevPhoto.id = "prev-photo";
+prevPhoto.innerHTML = "<p><</p>";
+
+nextPhoto.id = "next-photo";
+nextPhoto.innerHTML = "<p>></p>";
+
+function assignImageBehaviour() {
+	let { imagesArr, images } = getImages();
+	console.log(imagesArr);
+	images.forEach((image) => {
+		image.addEventListener("click", (e) => {
+			lightbox.classList.add("active");
+			const img = document.createElement("img");
+			img.src = image.src;
+			currentImage = img.src;
+			currentImgIndex = imagesArr.findIndex((el) => el.src == currentImage);
+
+			while (lightbox.querySelector("img")) {
+				lightbox.querySelector("img").remove();
+			}
+
+			imgContainer.appendChild(img);
+		});
+	});
+}
+
+const covers = document.querySelectorAll(".cover");
+const albums = document.querySelectorAll(".album");
+
+covers.forEach((cover, i) => {
+	cover.addEventListener("click", (e) => {
+		covers.forEach((cover) => cover.classList.add("inactive"));
+		albums.forEach((album) => {
+			album.style.display = "none";
+			album.classList.remove("active");
+		});
+		covers[i].classList.remove("inactive");
+		albums[i].style.display = "block";
+		albums[i].classList.add("active");
+		window.scrollTo({
 			top: 0,
-			behavior: 'smooth',
-		} );
-		setTimeout( assignImageBehaviour(), 300 );
-	} )
-} );
+			behavior: "smooth",
+		});
+		assignImageBehaviour();
+	});
+});
+function getImages() {
+	let images = document.querySelectorAll(".album.active img");
+	let imagesArr = [...images];
+	return { imagesArr, images };
+}

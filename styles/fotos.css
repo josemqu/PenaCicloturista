@@ -138,16 +138,8 @@
 }
 
 .img-container {
-    /* align-self: center; */
-    /* justify-self: center; */
-    /* align-items: center; */
-    /* justify-items: center; */
     display: flex;
     position: relative;
-    /* -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
 }
 
 #prev-photo {
@@ -192,10 +184,6 @@
     color: white;
     padding: 0px 20px;
     margin: 0;
-    /* -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
 }
 
 #next-photo p {
@@ -204,10 +192,6 @@
     color: white;
     padding: 0px 20px;
     margin: 0;
-    /* -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; */
 }
 
 #lightbox.active {

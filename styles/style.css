@@ -31,7 +31,6 @@ body::-webkit-scrollbar {
     margin: 0 auto;
     /* padding: 0 10px; */
     padding: .8rem;
-
     flex-grow: 1;
 }
 
@@ -148,7 +147,8 @@ body::-webkit-scrollbar {
         display: flex;
     }
 
-    .main-footer span {
+    .main-footer {
+        height: auto;
         font-size: 0.8rem;
     }
 }
@@ -199,9 +199,6 @@ body::-webkit-scrollbar {
     background-color: rgb(190, 190, 190);
     /* position: sticky; */
     /* bottom: 0%; */
-}
-
-.main-footer {
     font-size: 1rem;
 }
 
