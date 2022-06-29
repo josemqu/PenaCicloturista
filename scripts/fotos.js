@@ -23,7 +23,6 @@ lightbox.addEventListener("click", (e) => {
 
 prevPhoto.addEventListener("click", prevPhotoClick);
 nextPhoto.addEventListener("click", nextPhotoClick);
-
 document.addEventListener("keydown", keyPassImage);
 
 function keyPassImage(e) {
@@ -87,14 +86,20 @@ function assignImageBehaviour() {
 const covers = document.querySelectorAll(".cover");
 const albums = document.querySelectorAll(".album");
 
+const ALBUM_ANIMATE = "animate__headShake";
+
 covers.forEach((cover, i) => {
 	cover.addEventListener("click", (e) => {
-		covers.forEach((cover) => cover.classList.add("inactive"));
+		covers.forEach((cover) => {
+			cover.classList.add("inactive");
+			cover.classList.remove(ALBUM_ANIMATE);
+		});
 		albums.forEach((album) => {
 			album.style.display = "none";
 			album.classList.remove("active");
 		});
 		covers[i].classList.remove("inactive");
+		covers[i].classList.toggle(ALBUM_ANIMATE);
 		albums[i].style.display = "block";
 		albums[i].classList.add("active");
 		window.scrollTo({
