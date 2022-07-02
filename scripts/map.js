@@ -1,10 +1,10 @@
 console.log("map.js");
 
-let myCoord = [-37.88838, -57.84431];
+let myCoord = [-38.011083, -57.541015];
 
 let myMap = L.map("myMap").setView(myCoord, 13);
 
-let tile = `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`;
+let tile = `https://tile.openstreetmap.org/{z}/{x}/{y}.png`;
 
 // let tile2 = `https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png`;
 
@@ -14,7 +14,21 @@ let tile4 = `https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png`;
 
 L.tileLayer(tile, {
 	maxZoom: 18,
+	attribution: "© OpenStreetMap",
 }).addTo(myMap);
+
+var gpx = "./maps/map01.gpx"; // URL to your GPX file or the GPX itself
+new L.GPX(gpx, { async: true })
+	.on("loaded", function (e) {
+		e.target.getBounds();
+	})
+	.addTo(myMap);
+
+let elevations = new L.GPX(gpx, { async: true }).on("loaded", function (e) {
+	return e.target.get_elevation_data();
+});
+
+console.log(elevations._info.elevation._points);
 
 let marker = L.marker(myCoord).addTo(myMap);
 

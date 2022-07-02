@@ -1,4 +1,46 @@
+/* .map-main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-items: space-between;
+    align-items: center;
+} */
+
+.map-main-container {
+    display: flex;
+    /* grid-template-columns: 1fr 3fr; */
+    /* min-height: 70vh; */
+    /* padding: .8rem; */
+    /* justify-content: space-between; */
+    /* justify-items: center; */
+    /* justify-items: space-between; */
+    /* flex-wrap: wrap; */
+    width: 100%;
+    padding-bottom: 4rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.map-menu {
+    display: flex;
+    padding: 1rem;
+    width: 25%;
+}
+
+.map-container {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    padding: 1rem;
+    justify-content: end;
+    /* align-items: center; */
+}
+
 #myMap {
-    width: 600px;
+    /* float: right; */
+    /* justify-self: end; */
+    width: 400px;
     height: 400px;
 }
